@@ -3,7 +3,6 @@
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  min-height: 109px;
   padding: 92px 50px;
 }
 .header__links-list {
@@ -13,8 +12,13 @@
 }
 .header__links-list-item {
   list-style: circle;
+  font-size: 18px;
   /* точки внутри li чтоб не наезжали на другой блок*/
   list-style-position: inside;
+}
+
+.header__link_active {
+  text-decoration: none;
 }
 .header__links-list-item_no-bullit {
   list-style: none;
@@ -23,26 +27,24 @@
 .header__logo {
   display: block;
   justify-self: center;
-  width: 148px;
-  height: 105px;
+  width: 138px;
 }
 
 .address {
   font-size: 18px;
   font-style: normal;
+  line-height: 24.3px;
 }
 
 .header__address {
   /* выравнивание внутри только этой области */
   justify-self: end;
   max-width: 240px;
-  font-size: 18px;
 }
 
 .cover {
   display: grid;
   grid-template-rows: 1fr 0fr;
-  max-height: 757px;
   background-image: url(../images/cover.jpg);
   background-repeat: no-repeat;
   background-position: center;
@@ -65,7 +67,7 @@
 .cover__title {
   display: grid;
   row-gap: 20px;
-  padding: 165px 50px 135px;
+  padding: 178px 50px 86px;
   color: #fff;
   font-weight: 700;
   font-size: 100px;
@@ -81,7 +83,7 @@
 
 .no-letter-spacing {
   /* не знааааю */
-  letter-spacing: 0px;
+  letter-spacing: 0;
 }
 
 .aligned-text {
@@ -110,16 +112,15 @@
 }
 
 .cover__description-text {
-  word-spacing: 30px;
+  word-spacing: 18px;
 }
 
 .bet-button {
   flex-shrink: 0;
-  width: 257px;
-  height: 52px;
+  padding: 12px 32px;
   border: 1px solid #fff;
   color: #fff;
-  font-family: Raleway;
+  font-family: Raleway, Helvetica, Arial, sans-serif;
   font-weight: 400;
   font-size: 22px;
   text-align: center;
@@ -137,6 +138,7 @@
   font-weight: 700;
   line-height: normal;
   text-transform: uppercase;
+  padding-left: 40px;
 }
 
 .lots__card-list {
@@ -159,6 +161,7 @@
 .card-link {
   display: block;
   height: 100%;
+  text-decoration: none;
 }
 
 .card {
@@ -183,7 +186,7 @@
 
 .card__text {
   color: #fff;
-  font-family: Raleway;
+  font-family: Raleway, Helvetica, Arial, sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
@@ -213,10 +216,9 @@
 }
 
 .about__column {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 25px;
 }
 
 .about__logo {
@@ -242,15 +244,16 @@
   height: 114px;
 }
 
-.about__descr {
-  width: 885px;
-}
-
 .about__title {
   margin-top: 100px;
   margin-bottom: 100px;
   font-size: 40px;
   text-transform: uppercase;
+}
+
+.about__descr {
+  /* не очень понимаю как это работает */
+  grid-column-start: 2 span;
 }
 .about__text {
   margin-bottom: 25px;
@@ -267,6 +270,11 @@
   margin: 180px 50px 90px;
 }
 
+.footer__address {
+  /* выравнивание внутри только этой области */
+  justify-self: end;
+  max-width: 240px;
+}
 .footer__social-list {
   display: flex;
   justify-content: space-between;
