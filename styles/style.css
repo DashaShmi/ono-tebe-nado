@@ -8,13 +8,22 @@
 .header__links-list {
   display: flex;
   /* потом изменить расстояние, я хз какое оно */
-  column-gap: 22px;
+  column-gap: 32px;
 }
 .header__links-list-item {
   list-style: circle;
   font-size: 18px;
-  /* точки внутри li чтоб не наезжали на другой блок*/
-  list-style-position: inside;
+}
+
+.header__links-list-item::marker {
+  color: rebeccapurple;
+  margin-right: 0;
+}
+
+.header__link {
+  /* линия снизу отезжает и ее толщина */
+  text-underline-offset: 0.25em;
+  text-decoration-thickness: 1px;
 }
 
 .header__link_active {
@@ -67,7 +76,7 @@
 .cover__title {
   display: grid;
   row-gap: 20px;
-  padding: 178px 50px 86px;
+  padding: 165px 50px 86px;
   color: #fff;
   font-weight: 700;
   font-size: 100px;
@@ -88,6 +97,9 @@
 
 .aligned-text {
   display: block;
+}
+.aligned-text_start {
+  line-height: 115%;
 }
 
 .aligned-text_center {
@@ -112,7 +124,6 @@
 }
 
 .cover__description-text {
-  word-spacing: 18px;
   font-weight: 400;
   font-size: 22px;
 }
@@ -269,7 +280,7 @@
 .footer {
   display: flex;
   justify-content: space-between;
-  margin: 180px 50px 90px;
+  margin: 186px 50px 90px;
 }
 
 .footer__address {
@@ -300,4 +311,8 @@
 .footer__social-icon {
   height: 48px;
   width: 48px;
+}
+
+.footer__address a {
+  display: inline-block;
 }
